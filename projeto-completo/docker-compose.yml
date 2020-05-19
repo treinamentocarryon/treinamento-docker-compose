@@ -42,13 +42,11 @@ services:
             - ./nginx.conf:/etc/nginx/conf.d/default.conf
         networks:
             - site-network
-        # Associando o serviço do NGINX ao serviço do PHP
-        links:
-            - php
+
 # Descrevendo o serviço do PHP
     php:
         # Imagem utilizada (a que criamos via docker build)
-        image: php-pdo-carryon
+        image: php-pdo-treinamento
         container_name: php
         # Mapeando a pasta que contém o site para dentro da pasta /site do container
         volumes:
